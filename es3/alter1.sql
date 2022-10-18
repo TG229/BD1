@@ -39,3 +39,15 @@ CREATE TABLE segreteria.esami(
 		ON DELETE RESTRICT
 		ON UPDATE CASCADE
 );
+
+ALTER TABLE segreteria.studenti
+	ALTER anno_corso SET DEFAULT 3;
+	
+ALTER TABLE segreteria.docenti
+	ADD num_telefono VARCHAR(8) DEFAULT NULL;
+
+insert into segreteria.studenti values ('101010', 'Alessandro', 'Violi', '1884-01-07', 3);
+
+ALTER TABLE segreteria.studenti
+	ADD CONSTRAINT DataOk
+	CHECK (data_nascita > '1900-01-01');
