@@ -3,7 +3,7 @@ CREATE schema segreteria;
 CREATE DOMAIN segreteria.votazione AS SMALLINT CHECK(value >= 18 and value <= 30 or value = 33);
 
 CREATE TABLE segreteria.studenti (
-	matricola CHAR(5) PRIMARY KEY,
+	matricola CHAR(6) PRIMARY KEY,
 	nome VARCHAR(20) NOT NULL,
 	cognome VARCHAR(20) NOT NULL,
 	data_nascita DATE,
@@ -12,7 +12,7 @@ CREATE TABLE segreteria.studenti (
 );
 
 CREATE TABLE segreteria.docenti(
-	cod_docente CHAR(5) PRIMARY KEY,
+	cod_docente CHAR(6) PRIMARY KEY,
 	nome VARCHAR(20) NOT NULL,
 	cognome VARCHAR(20) NOT NULL,
 	indirizzo VARCHAR(50)
@@ -28,7 +28,7 @@ CREATE TABLE segreteria.corsi(
 );
 
 CREATE TABLE segreteria.esami(
-	studente CHAR(5),
+	studente CHAR(6),
 	corso CHAR(3),
 	data DATE NOT NULL,
 	voto segreteria.votazione NOT NULL,
