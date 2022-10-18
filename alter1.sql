@@ -21,7 +21,7 @@ CREATE TABLE segreteria.docenti(
 CREATE TABLE segreteria.corsi(
 	cod_corso CHAR(3) PRIMARY KEY,
 	nome VARCHAR(20),
-	docente CHAR(5),
+	docente CHAR(6),
 		FOREIGN KEY (docente) REFERENCES segreteria.docenti (cod_docente)
 		ON DELETE RESTRICT
 		ON UPDATE CASCADE
